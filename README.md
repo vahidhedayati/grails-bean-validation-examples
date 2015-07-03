@@ -22,7 +22,7 @@ This is a neat way of centralising validation.
 
 ### Basic bean for non domain class object validation and other configuration object
 
-[ConnectionBean from boselecta plugin])https://github.com/vahidhedayati/grails-boselecta-plugin/blob/master/src/main/groovy/grails/plugin/boselecta/beans/ConnectionBean.groovy)
+[ConnectionBean from boselecta plugin](https://github.com/vahidhedayati/grails-boselecta-plugin/blob/master/src/main/groovy/grails/plugin/boselecta/beans/ConnectionBean.groovy)
 
 ```groovy
 package grails.plugin.boselecta.beans
@@ -62,7 +62,7 @@ def connect  =  { attrs ->
 		...
 }		
 ```
-We are saying if the bean did not validate then to throw a tag error and give the actual t that failed. In this example there was 2, now image the same task for 20 attributes, it would be the same 5 lines of code VS 60 or 30 if you do if (something){dosomething} in one line.
+We are saying if the bean did not validate then to throw a tag error and give the actual field that failed. In this example there was 2. It would be the same 5 lines of code for 20 attribute verifications.
 
 ### Controllers
 
@@ -75,6 +75,7 @@ class TestController {
 
 	/*
 	 * index 1 parent and child bean are encapsulated as one object and behave as one 
+	 * class ConnectionBean extends UserBean{ ...
 	 * http://localhost:8080/testing/test/index2?host=a&username=aa         -- works
 	 */
 	def index2(ConnectionBean cb) {
@@ -91,7 +92,8 @@ class TestController {
 	}
 	
 	/*
-	 * index 3 required 1 child list elements 
+	 * index 3 required 1 NEW child elements 
+	 * UBean userDetails = new UBean() 
 	 * http://localhost:8080/testing/test/index3?host=a&userDetails.username=aa&userDetails.name=aas works
 	 */
 	def index3(ConnBean cb) {
