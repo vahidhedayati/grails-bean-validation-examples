@@ -1,3 +1,11 @@
+# Grails 3 Validation
+## [Youtube video](https://www.youtube.com/watch?v=ATLQ7CCvPvI)
+Grails 3 validation classes
+Grails 3 springSecurity - user locking after 5 failed attempts
+Grails 3 Quartz Schedule - email multiple images with email
+
+# [Grails 2](https://github.com/vahidhedayati/grails-bean-validation-examples/tree/grails2)
+
 # Grails: Groovy Beans for validation of user input
 
 User input validation is an age old question and with a default grails application if a user implements an app based on domainClasses then your domainClasses by default validation objects. 

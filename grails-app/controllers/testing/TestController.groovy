@@ -6,6 +6,8 @@ class TestController {
 	 * index 1 parent and child bean are encapsulated as one object and behave as one 
 	 * http://localhost:8080/testing/test/index2?host=a&username=aa         -- works
 	 */
+	def schedulerService
+
 	def index2(ConnectionBean cb) {
 		render view: 'index2', model:[cb:cb]
 		/*
@@ -18,7 +20,12 @@ class TestController {
 		}
 		*/
 	}
-	
+
+	def testSchedule() {
+		schedulerService.weeklyEmail()
+		render text: "weeking email triggered"
+	}
+
 	/*
 	 * index 3 required 1 child list elements 
 	 * http://localhost:8080/testing/test/index3?host=a&userDetails.username=aa&userDetails.name=aas works
